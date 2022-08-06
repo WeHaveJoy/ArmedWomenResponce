@@ -1,12 +1,5 @@
 module.exports = (app, db) => {
 
-    app.post(`/api/bookings`, async (req,res) => {
-
-        const {date_booking,time_booking,patient_id} = req.body;
-
-        const getbookings = await db.oneOrNone(`insert into`)
-
-    })
 
     app.post('/api/heartrate', async (req, res)=> {
         try {
@@ -19,7 +12,7 @@ module.exports = (app, db) => {
             })
         }else{
             res.json({
-                message: 'We are sending our Armed Response your way and have alerted the police',
+                message: 'Are you in a safe place? Please send us a response!',
                 status: 401
             })
         }
