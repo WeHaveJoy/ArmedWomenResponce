@@ -1,6 +1,6 @@
 create table patients(
-    id serial int not null primary key,
-    first_name text text not null,
+    id  serial not null primary key,
+    first_name text not null,
     last_name text not null,
     age int not null,
     username text not null
@@ -12,13 +12,13 @@ create table heart_rate(
     danger_heart_rate text not null
 );
 
-create types_of_abuse(
+create table types_of_abuse(
     id serial not null primary key,
     mental_health text not null,
     emotional_abuse text not null,
     physical_abuse text not null,
     sexual_abuse text not null,
-    technological_abuse not  null
+    technological_abuse text not null
 );
 
 create table bookings(

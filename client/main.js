@@ -1,5 +1,5 @@
 import './style.css'
-import './semantic.css'
+import './semantic'
 import './bootstrap.min.css'
 import javascriptLogo from './javascript.svg'
 import flatpickr from "flatpickr";
