@@ -9,48 +9,44 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" x-data="safetyawareness">
     <h1>Armed Women Response</h1>
     <!-- Login Screen -->
 
     <!-- Sign Up Screen -->
 
     <!-- Screen for Checking Pulse -->
-    <div x-show="checkpulse_screen" class="row ui form victim">
+    <div class="row ui form victim">
       <div class="four fields">
         <h2>Check Pulse Rate</h2>
         <div class="field">
           <label for="Check Pulse">Check Pulse Rate</label>
-          <input x-model="" type="text" name="description" class="description">
+          <input x-model="average_heart_rate" type="text" name="description" class="description">
+          <!-- <input x-model="danger_heart_rate" type="text" name="description" class="description"> -->
         </div>
         <div class="field">
-          <button class="" @click="">Check</button>
+          <button class="" @click="checkPulse()">Check</button>
         </div>
-        <!-- Should display if you are safe (60-90 heart beat rate) -->
-        <div class="field">
-          <p><b>You are safe!</b></p>
-        </div>
-        <!-- Should display if you are safe (100 or more heart beat rate) -->
-        <div class="field">
-          <p><b>You might be in danger</b></p>
-        </div>
+       <span x-text="message">
+         
+       </span>
       </div>
     </div>
 
     <!-- Screen for making bookings -->
-    <div x-show="makebookings_screen" class="row ui form victim">
+    <div class="row ui form victim">
       <div class="two fields">
        <!-- Will require that document I sent to everyone on slack -->
       </div>
     </div>
 
     <!-- Screen for checking counseling areas around you -->
-    <div x-show="counseling_screen" class="row ui form victim">
+    <div class="row ui form victim">
       <div class="two fields">
         <h2>Check Counseling Sessions Around You</h2>
         <div class="field">
           <label for="Select trauma">Select type of abuse that occured:</label>
-					<select x-model="trauma">
+					<select >
 						<template x-for="">
 							<option :value="" x-text=""></option>
 						</template>
@@ -62,15 +58,27 @@
       </div>
     </div>
     <!-- Screen for successful booking made -->
-    <div x-show="notification_screen" class="row ui form victim">
+    <div  class="row ui form victim">
       <div class="one field">
         <div class="bookings center-text">
-          Thank you <b x-text=""></b> for the making booking at <b x-text=""></b>
+          <div class="flatpickr">
+            <input type="text" placeholder="Select Date.." data-input> <!-- input is mandatory -->
+        
+            <a class="input-button" title="toggle" data-toggle>
+                <i class="icon-calendar"></i>
+            </a>
+        
+            <a class="input-button" title="clear" data-clear>
+                <i class="icon-close"></i>
+            </a>
+            Thank you <b x-text=""></b> for the making booking at <b x-text=""></b>
+        </div>
+        
         </div>
       </div>
     </div>
     <!-- Screen for making notification if you're safe -->
-    <div x-show="safety_screen" class="row ui form victim">
+    <div class="row ui form victim">
       <div class="three fields">
         <div class="field">
           <b x-text=""></b> Are you in a safe place? We noticed you're heart rate is a bit higher than normal

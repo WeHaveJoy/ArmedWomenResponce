@@ -12,15 +12,6 @@ create table heart_rate(
     danger_heart_rate text not null
 );
 
--- create table types_of_abuse(
---     id serial not null primary key,
---     mental_health text,
---     emotional_abuse text,
---     physical_abuse text,
---     sexual_abuse text,
---     technological_abuse text
--- );
-
 create table mental_health(
     id serial not null primary key,
     details text not null
@@ -55,5 +46,4 @@ create table bookings(
     patient_id int not null,
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
-
 

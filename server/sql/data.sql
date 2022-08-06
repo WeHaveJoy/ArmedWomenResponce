@@ -1,5 +1,3 @@
-
-
 insert into mental_health (details) values ('Life Path Health West Beach Clinic - Westport Square, Sandown Road, West Beach, Blaauwberg, 7441');
 insert into mental_health (details) values ('Carlien Serfontein Counselling- 156 Dorp St, Stellenbosch Central, Stellenbosch, 7600');
 insert into mental_health (details) values ('Stikland Psychiatric Hospital - 75 De La Haye Ave, Stikland Hospital, Cape Town, 7530');
