@@ -12,7 +12,7 @@ const Responded = ()=>{
         ...Counseling(),
         ...Bookings(),
         ...Notifications(),
-        ...CheckSafety(),
+        ...CheckSafety(),       
 
     
         init(){
