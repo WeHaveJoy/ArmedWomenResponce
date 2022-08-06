@@ -1,5 +1,9 @@
 create table patients(
+<<<<<<< HEAD
     id  serial not null primary key,
+=======
+    id serial not null primary key,
+>>>>>>> a3544d7bdbd1faf8373dbfcc9d160f9b87df939b
     first_name text not null,
     last_name text not null,
     age int not null,
@@ -12,6 +16,7 @@ create table heart_rate(
     danger_heart_rate text not null
 );
 
+<<<<<<< HEAD
 create table types_of_abuse(
     id serial not null primary key,
     mental_health text not null,
@@ -21,6 +26,44 @@ create table types_of_abuse(
     technological_abuse text not null
 );
 
+=======
+-- create table types_of_abuse(
+--     id serial not null primary key,
+--     mental_health text,
+--     emotional_abuse text,
+--     physical_abuse text,
+--     sexual_abuse text,
+--     technological_abuse text
+-- );
+
+create table mental_health(
+    id serial not null primary key,
+    details text not null
+);
+
+create table emotional_abuse(
+    id serial not null primary key,
+    details text not null
+);
+
+create table physical_abuse(
+    id serial not null primary key,
+    details text not null
+);
+
+create table sexual_abuse(
+    id serial not null primary key,
+    details text not null
+);
+
+
+create table technological_abuse(
+    id serial not null primary key,
+    details text not null
+);
+
+
+>>>>>>> a3544d7bdbd1faf8373dbfcc9d160f9b87df939b
 create table bookings(
     id serial not null primary key,
     date_booking date not null,
@@ -29,3 +72,7 @@ create table bookings(
     FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3544d7bdbd1faf8373dbfcc9d160f9b87df939b
