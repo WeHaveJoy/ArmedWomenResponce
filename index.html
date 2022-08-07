@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/vite.4a748afd.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <script type="module" crossorigin src="/assets/index.3de615ac.js"></script>
+  <link rel="stylesheet" href="/assets/index.e2f68517.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1>Armed Women Response</h1>
+    <!-- Login Screen -->
+
+    <!-- Sign Up Screen -->
+
+    <!-- Screen for Checking Pulse -->
+    <div x-show="checkpulse_screen" class="row ui form victim">
+      <div class="four fields">
+        <h2>Check Pulse Rate</h2>
+        <div class="field">
+          <label for="Check Pulse">Check Pulse Rate</label>
+          <input x-model="" type="text" name="description" class="description">
+        </div>
+        <div class="field">
+          <button class="" @click="">Check</button>
+        </div>
+        <!-- Should display if you are safe (60-90 heart beat rate) -->
+        <div class="field">
+          <p><b>You are safe!</b></p>
+        </div>
+        <!-- Should display if you are safe (100 or more heart beat rate) -->
+        <div class="field">
+          <p><b>You might be in danger</b></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen for making bookings -->
+    <div x-show="makebookings_screen" class="row ui form victim">
+      <div class="two fields">
+       <!-- Will require that document I sent to everyone on slack -->
+      </div>
+    </div>
+
+    <!-- Screen for checking counseling areas around you -->
+    <div x-show="counseling_screen" class="row ui form victim">
+      <div class="two fields">
+        <h2>Check Counseling Sessions Around You</h2>
+        <div class="field">
+          <label for="Select trauma">Select type of abuse that occured:</label>
+					<select x-model="trauma">
+						<template x-for="">
+							<option :value="" x-text=""></option>
+						</template>
+					</select>
+        </div>
+        <div class="field">
+          <button class="" @click="">Search for area around you</button>
+        </div>
+      </div>
+    </div>
+    <!-- Screen for successful booking made -->
+    <div x-show="notification_screen" class="row ui form victim">
+      <div class="one field">
+        <div class="bookings center-text">
+          Thank you <b x-text=""></b> for the making booking at <b x-text=""></b>
+        </div>
+      </div>
+    </div>
+    <!-- Screen for making notification if you're safe -->
+    <div x-show="safety_screen" class="row ui form victim">
+      <div class="three fields">
+        <div class="field">
+          <b x-text=""></b> Are you in a safe place? We noticed you're heart rate is a bit higher than normal
+          <button class="ui secondary button text-white bg-black rounded-lg" @click="">Yes</button>
+                                           OR
+          <button class="ui secondary button text-white bg-black rounded-lg" @click="">No</button>
+
+        </div>
+        <!-- If Yes -->
+        <div class="field">
+          <b x-text=""></b> Please keep safe and be vigilante
+        </div>
+        <!-- If No -->
+        <div class="field">
+          <b x-text=""></b> We have sent the Police and our Armed Response to you
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+</body>
+
+</html>
