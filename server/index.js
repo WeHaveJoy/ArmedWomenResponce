@@ -14,6 +14,21 @@ const someOtherPlaintextPassword = "not_bacon";
 const API = require("./api");
 const app = express();
 
+// THE CORES ARE ADDED FOR HEROKU AND THEY ARE USED ON ALL MY ROUTES
+const cors = require('cors');
+app.use((req, res, next) => {
+	res.setHeader("Access-Control-Allow-Origin", "https://wehavejoy.github.io/ArmedWomenResponce/");
+	res.header(
+	  "Access-Control-Allow-Headers",
+	  "Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+  });
+app.use(cors({
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
+// cores code ends here
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
