@@ -5,106 +5,216 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <title>Vite App</title>
 </head>
 
 <body>
   <div id="app" x-data="safetyawareness">
     <h1>Armed Women Response</h1>
-    <!-- Login Screen -->
-
-    <!-- Sign Up Screen -->
-
-    <!-- Screen for Checking Pulse -->
-    <div class="row ui form victim">
-      <div class="four fields">
-        <h2>Check Pulse Rate</h2>
-        <div class="field">
-          <label for="Check Pulse">Check Pulse Rate</label>
-          <input x-model="average_heart_rate" type="text" name="description" class="description">
-        </div>
-        <div class="field">
-          <button class="" @click="checkPulse()">Check</button>
-        </div>
-       <span x-text="message">
-
-       </span>
-      </div>
+    <!-- Navigation Bar Screen -->
+    <div class="navigation ui menu">
+      <div class="left menu">
+        <span  @click="">Home</span>
     </div>
-      <!-- Screen for making notification if you're safe -->
-      <div class="row ui form victim">
-        <div class="three fields">
-          <div class="field">
-            Are you in a safe place? We noticed you're heart rate is a bit higher than normal
-            <button class="" @click="safetyCheck()">Yes</button>
-                                             OR
-            <button class="" @click="notSafe()">No</button>
-  
+      
+    </div>
+    <!-- Landing Screen -->
+    <div class="row space">
+      <div class="landing center-text">
+        <img src="./FZUQO04XwAE1sQ9.jpeg" alt="..." class="center ui medium image" style=" border-radius: 100px;">
+      </div>
+      <div class="row" x-show="landing">
+        <div class="footer">
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg" @click="getstarted()">
+            Let's Get Started
+          </button>
+          <div class="contact">
+            <strong>Contact us at:</strong>
+            (021)-555-2000
+            <strong>twitter /fb /insta </strong> @armedwomenresponse
           </div>
-        
-            <span x-text="safetyCheckMessage.safe">
-
-            </span> 
-          
-            <span x-text="notSafeMessage.danger">
-
-            </span> 
-          
-        </div>
-  
-      </div>
-
-    <!-- Screen for making bookings -->
-    <div class="row ui form victim">
-      <!-- <div class=“row”>
-        <div class=“field”>
-          <label for=“select_data”>Select date</label>
-          <input x-model=“datetime” type=“datatime-local” id=“picker”>
-          <span x-text=“datetime”></span>
-          <button x-on:click =“sendAppointment(datetime)“>submit</button>
-        </div>
-      </div> -->
-    </div>
-
-    <!-- Screen for checking counseling areas around you -->
-    <div class="row ui form victim">
-      <div class="two fields">
-        <h2>Check Counseling Sessions Around You</h2>
-        <div class="field">
-          <label for="Select trauma">Select type of abuse that occured:</label>
-					<select >
-						<template x-for="">
-							<option :value=""></option>
-						</template>
-					</select>
-        </div>
-        <div class="field">
-          <button class="" @click="">Search for area around you</button>
+          <div class="address">
+            Response Station
+            <br>
+            Action Road
+            <br>
+            Women Town
+            <br>
+            7890
+          </div>
         </div>
       </div>
     </div>
-    <!-- Screen for successful booking made -->
-    <div  class="row ui form victim">
-      <div class="one field">
-        <div class="bookings center-text">
-          <div class="flatpickr">
-            <input type="text" placeholder="Select Date.." data-input> <!-- input is mandatory -->
-        
-            <a class="input-button" title="toggle" data-toggle>
-                <i class="icon-calendar"></i>
-            </a>
-        
-            <a class="input-button" title="clear" data-clear>
-                <i class="icon-close"></i>
-            </a>
-            Thank you  for the making booking at
+<div class="row" x-show="pages">
+ <!-- Screen for Checking Pulse -->
+ <div class="row ui form victim">
+  <div class="three fields">
+    <h2>Check Pulse Rate</h2>
+    <div class="field">
+      <label field for="Check Pulse">Check Pulse Rate</label>
+      <input x-model="average_heart_rate" type="text" name="description" class="description">
+      <button class="ui first button flex items-center justify-between w-full p-6 text-white bg-black rounded-lg" @click="checkPulse()">Check</button>
+    </div>
+    <div class="field">
+    </div>
+    <span x-text="message">
+
+    </span>
+  </div>
+</div>
+<!-- Screen for making notification if you're safe -->
+<div class="row ui form victim">
+  <div class="field">
+   <p>      Are you in a safe place? We noticed you're heart rate is a bit higher than normal
+  </p>
+    <button class="ui first button text-white bg-black rounded-lg" @click="openPopup()">Yes</button> OR
+    <button class="ui first button text-white bg-black rounded-lg" @click="opencancelPopup()">No</button>
+
+      
+    </div>
+    <div x-show="popup" class="popup" id="popup">
+      <!-- <img src="./images/ch3.jpeg" alt=""> -->
+      <h2>Response recieved!</h2>
+      <p>Please keep safe and be vigilante
+      </p>
+      <button class="ui secondary button text-white bg-black rounded-lg" @click="closePopup()">Close</button>
+    </div>
+
+
+    <!-- <button @click="opencancelPopup()">No</button> -->
+    <div x-show="cancelPopup" class="cancelPopup" id="cancelPopup">
+        <!-- <img src="./images/ch3.jpeg" alt="" -->
+        <h2>Response recieved!</h2>
+        <p>We are sending police your way and a trained specialist</p>
+        <button class="ui secondary button text-white bg-black rounded-lg" @click="closecancelPopup()">Close</button>
+      </div>
+
+</div>
+
+  <!-- Screen for making bookings -->
+  <div class="row ui form victim">
+    <!-- <div class=“row”>
+      <div class=“field”>
+        <label for=“select_data”>Select date</label>
+        <input x-model=“datetime” type=“datatime-local” id=“picker”>
+        <span x-text=“datetime”></span>
+        <button x-on:click =“sendAppointment(datetime)“>submit</button>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- Screen for checking counseling areas around you -->
+  <div class="row ui form victim">
+    <div class="two fields space">
+      <h2>Check Counseling Sessions Around You</h2>
+      <div class="field">
+        <label for="Select trauma">Select type of abuse that occured:</label>
+        <div>
+          <br>
+
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg"
+
+          @click="mental()">Mental health</button>
+          <template x-for="ment in mentalA">
+            <div>
+              <ul>
+                
+                <li> <a href="#" @click="open= !open" x-text="ment.details"></a></li>
+              </ul>
+            </div>
+          </template>
+
         </div>
-        
+        <br>
+        <div>
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg" @click="emotional">Emotional Abuse</button>
+          <br>
+          <template x-for="emo in emotionalA">
+            <div>
+              <ul>
+                <li> <a href="#" @click="" x-text="emo.details"></a></li>
+              </ul>
+            </div>
+          </template>
+
         </div>
+        <br>
+        <div>
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg" @click="physical()">Physical abuse</button>
+          <template x-for="physic in physicalA">
+            <div >
+              <ul>
+                <li> <a href="#" @click="" x-text="physic.details"></a></li>
+              </ul>
+            </div>
+          </template>
+
+        </div>
+        <br>
+        <div>
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg" @click="sexual()">Sexual Abuse</button>
+          <template x-for="sexua in sexualA">
+            <div>
+              <ul>
+                <li> <a href="#" @click="" x-text="sexua.details"></a></li>
+              </ul>
+            </div>
+          </template>
+
+        </div>
+        <br>
+        <div>
+          <button class="ui secondary button getstarted text-white bg-black rounded-lg" @click="technological()">Technological Abuse</button>
+          <template x-for="tech in technologicalA">
+            <div>
+              <ul>
+            <li> <a href="#" @click="" x-text="tech.details"></a></li>
+          </ul>
+            </div>
+          </template>
+
+        </div>
+      </div>
+      <br>
+      </div>
+      <!-- <div class="field">
+        <button class="" @click="">Search for area around you</button>
+      </div>
+    </div> -->
+
+
+  </div>
+  <!-- Screen for successful booking made -->
+  <div class="row">
+    <div class="field">
+      <label for="select_data">Select date</label>
+      <input x-model="datetime" type="datatime-local" id="picker">
+      
+      <div x-data="{open: false}">
+        <button class="ui first button getstarted text-white bg-black rounded-lg" @click ="sendAppointment(datetime), open= !open">submit</button>
+      <div x-show="open">Thank you for making a booking for the <span x-text="datetime"></span>
+      </div>
       </div>
     </div>
   </div>
+</div>
+    
+    </div>
+  <!-- </div> -->
   <script type="module" src="/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <script>
+    const datetime = {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+}
+   const selected_data =  flatpickr("input[type=datatime-local]", datetime);
+   console.log(datetime);
+   </script>
+
 </body>
 
 </html>

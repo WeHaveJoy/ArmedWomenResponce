@@ -26,7 +26,7 @@ const config = {
     connectionString:
        
 
-        process.env.DATABASE_URL || "postgres://hlomlas:hlomla@localhost:5432/armedresponse",
+        process.env.DATABASE_URL || "postgres://postgres:sino123@localhost:5432/postgres",
 
 
 };

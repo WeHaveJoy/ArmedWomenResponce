@@ -64,6 +64,128 @@ h1 {
   color: #888;
 }
 
+/* STYLING FOR POP */
+.popup{
+  width: 400px;
+  background: #CCCCCC;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50) scale(1);
+}
+.popup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6FD649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.cancelPopup{
+  width: 400px;
+  background: #CCCCCC;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.cancelPopup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50) scale(1);
+}
+.cancelPopup img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.cancelPopup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.getstarted{
+  margin-top: 2em;
+}
+.navigation{
+  display: flex;
+  margin-bottom: 2em;
+}
+.navigation div {
+  flex: 1;
+  border: 1px solid;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #9b2226;
+}
+footer {
+  display: flex;
+}
+.footer div {
+  flex: 1;
+  border: 1px solid;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #9b2226;
+}
+.cancelPopup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6FD649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+li{
+  list-style-type: none;
+
+}
+
+.secondary{
+  width: 400px;
+}
+.space{
+  margin-top: 10em;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;

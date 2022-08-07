@@ -18,6 +18,12 @@ const Responded = ()=>{
         init(){
   
         },
+        pages:false,
+        landing:true,
+        getstarted(){
+            this.landing = false,
+            this.pages = true
+        },
 }
 }
 
